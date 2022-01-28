@@ -1,0 +1,566 @@
+/* 
+Name: Course Project - Coworking Registry
+Program: Software Development Diploma
+Course Code: SODV1201 - Introduction to Web Programming
+Authors: Arianne Hoffschneider Guedes Gayer and Jorge Eduardo Schmitt Gayer
+Student IDs: 425002 and 424267
+*/
+
+body {
+  margin-left: 0px;
+}
+
+.main-body {
+  font-family: "Poppins", sans-serif;
+  color: #464c4f;
+}
+
+.page-title {
+  /* position: absolute; */
+  top: 10px;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+
+.up-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* .div-left-menu {
+  width: 320px;
+} */
+
+.left-menu {
+  list-style-type: none;
+  border: 1px #e4f4e4 solid;
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  height: 100%;
+  /* position: fixed; */
+  /* width: 320px; */
+}
+
+.left-menu li {
+  border: 1px #e4f4e4 solid;
+  border-left: none;
+  border-right: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  transition: 0.5s;
+}
+
+.left-menu li:hover {
+  border-top: 1px solid #13aa52;
+  border-bottom: 1px solid #13aa52;
+  background-color: #e4f4e4;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+td {
+  transition: 0.5s;
+}
+
+tr:hover {
+  background-color: #e4f4e4;
+  border-spacing: 0ch;
+  /* cursor: pointer; */
+}
+
+th {
+  background-color: white;
+  border-spacing: 0ch;
+  text-align: left;
+  /* padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px; */
+}
+
+/* th:hover {
+  cursor: pointer;
+  background-color: whi;
+  border-radius: 8em;
+} */
+
+.action-icons {
+  width: 20px;
+  margin-left: 5px;
+  margin-right: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  transition: 0.2s;
+  border-bottom: 1px solid transparent;
+}
+
+.action-icons:hover {
+  transform: scale(1.2);
+  /* border-bottom: 1px solid #464c4f; */
+  cursor: pointer;
+}
+
+.action-add {
+  width: 45px;
+  margin: auto;
+  padding-left: 140px;
+  padding-right: 2px;
+  padding-top: 10px;
+}
+
+.head {
+  padding-right: 10px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  border: none;
+}
+
+.content-name {
+  max-width: 150px;
+}
+
+.content-description {
+  max-width: 200px;
+}
+
+.management {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 30px;
+}
+
+.content {
+  font-size: medium;
+  width: 100%;
+  /* position: absolute; */
+  /* width: 65%; */
+}
+
+.label-records {
+  color: #13aa52;
+  margin-left: 15px;
+}
+
+.up-separator {
+  border: 1px #e4f4e4 solid;
+  width: 100%;
+  margin: 0px;
+}
+
+.menu {
+  font-family: "Poppins", sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-size: small;
+  text-align: end;
+}
+
+.menu li {
+  display: inline-flex;
+}
+
+#logout {
+  margin-right: 30px;
+  border: 5px solid transparent;
+  padding: 5px 15px;
+  border-radius: 8em;
+}
+
+#user {
+  margin-right: 20px;
+  /* border: 5px solid
+    linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(18, 46, 97, 0.705)); */
+  border: 1px solid #e4f4e4;
+  padding: 5px 15px;
+  border-radius: 8em;
+}
+
+#logout:hover {
+  cursor: pointer;
+}
+
+#user:hover {
+  cursor: pointer;
+  border: 1px solid #464c4f;
+}
+
+.div-user {
+  text-align: end;
+  display: grid;
+  background-color: white;
+}
+
+.div-left-menu {
+  display: none;
+}
+
+.div-left-menu ul {
+  transition: 1s;
+}
+
+.mgmt-header {
+  display: grid;
+  grid-template-columns: 1fr 0.2fr;
+}
+
+.div-table,
+.mgmt-header {
+  margin: auto;
+  display: grid;
+  width: 90%;
+}
+
+.main-table {
+  font-size: small;
+  padding-left: 8px;
+  word-wrap: break-word;
+}
+
+.head {
+  font-size: medium;
+}
+
+/* .div-table {
+  height: 30vw;
+  overflow-y: scroll;
+} */
+
+/* Here start the form customization */
+
+.div-content {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  width: 50%;
+  border: 1px solid #e4f4e4;
+  padding: 30px;
+}
+
+.div-btn {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.btn {
+  padding: 15px 35px 15px 35px;
+  border-radius: 8em;
+  border: 2px solid transparent;
+  background-color: #13aa52;
+  color: white;
+}
+
+.btn:hover {
+  /* border: 5px solid #e4f4e4;
+  background-color: transparent;
+  color: #13aa52; */
+  border: 2px solid #464c4f;
+  cursor: pointer;
+}
+
+#txtDescription {
+  font-family: "Poppins", sans-serif;
+  font-size: medium;
+  color: #464c4f;
+}
+
+#txtName,
+#txtNeighborhood,
+#optType,
+#txtLatitude,
+#txtLongitude,
+#txtPrice,
+#txtSeating {
+  height: 2em;
+  font-size: medium;
+  color: #464c4f;
+}
+
+#txtName {
+  width: 80%;
+}
+
+#txtLongitude,
+#txtLatitude {
+  text-align: end;
+}
+
+.inside-content {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.labels {
+  margin-bottom: 5px;
+  margin-right: 8px;
+}
+
+.one-line {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.border-div {
+  margin: 0px;
+  border: 1px solid #e4f4e4;
+  padding: 20px;
+}
+
+.the-map {
+  width: 100%;
+}
+
+.one-block {
+  display: grid;
+}
+
+.col2 {
+  text-align: end;
+}
+
+.div-amenities {
+  display: grid;
+  width: 90%;
+}
+
+.div-location {
+  text-align: center;
+  margin: auto;
+}
+
+.update-map {
+  padding: 5px 15px 5px 15px;
+  border-radius: 8em;
+  border: 2px solid #e4f4e4;
+  background-color: transparent;
+  color: #13aa52;
+  margin-bottom: 10px;
+}
+
+.update-map:hover {
+  border: 2px solid #e4f4e4;
+  background-color: #13aa52;
+  color: #e4f4e4;
+  cursor: pointer;
+}
+
+.table-link {
+  text-decoration: none;
+  color: #464c4f;
+}
+
+.err-msg {
+  /* border: 1px solid #e4f4e4; */
+  color: red;
+  /* position: fixed;
+  float: right;
+  left: 80vw;
+  top: 25vw;
+  width: 200px; */
+  text-align: center;
+  display: none;
+}
+
+.themap {
+  background-color: black;
+  visibility: visible;
+  width: auto;
+  height: 300px;
+}
+
+/* Configuring delete confirmation div */
+
+.view-icon {
+  width: 30px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.div-delete {
+  display: grid;
+  /* margin: auto; */
+  /* height: auto; */
+  /* text-align: center; */
+  /* transition: 1s; */
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  margin: auto;
+  text-align: center;
+  z-index: +1500;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  backdrop-filter: blur(3px);
+  z-index: -1000;
+}
+
+.content-delete {
+  background-color: #e4f4e4;
+  margin: auto;
+  text-align: center;
+  border: 3px solid #13aa52;
+  padding: 25px;
+  padding-bottom: 0px;
+  margin-top: 25px;
+  /* margin-bottom: 25px; */
+  border-radius: 55px;
+  width: 30%;
+}
+
+.content-available,
+.content-view,
+.content-seating,
+.content-actions,
+.head-view,
+.head-available,
+.head-seating,
+.head-actions {
+  text-align: center;
+}
+
+.div-delete h2 {
+  margin-bottom: 40px;
+}
+
+#idToDelete {
+  display: none;
+}
+
+.div-amenities {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Customize Login Section */
+.login {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 120px;
+  text-align: center;
+  text-justify: auto;
+  margin: auto;
+  backdrop-filter: blur(4px);
+  display: none;
+}
+
+.login-content {
+  border: 1px solid #e4f4e4;
+  border-radius: 40px;
+  height: 250px;
+  width: 450px;
+  text-align: center;
+  margin: auto;
+  background-color: white;
+}
+
+.login-content1 {
+  height: auto;
+  width: auto;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.user-login {
+  margin-bottom: 8px;
+}
+
+.login-link {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  /* Edit screen responsiveness */
+  .one-line {
+    grid-template-columns: 1fr;
+  }
+
+  #txtLongitude,
+  #txtLatitude,
+  #txtSeating,
+  .labels,
+  .col1,
+  .col2,
+  .one-line,
+  .one-block,
+  .lblAvailable {
+    text-align: left;
+    margin-left: 0px;
+  }
+
+  #txtNeighborhood,
+  #txtLatitude,
+  #txtLongitude {
+    width: 120px;
+  }
+
+  .one-line {
+    margin-top: 0px;
+  }
+
+  .col2 {
+    margin-top: 20px;
+  }
+
+  #txtName,
+  #optType,
+  #txtNeighborhood,
+  #txtPrice,
+  #txtSeating,
+  #txtLatitude,
+  #txtLongitude {
+    width: 100%;
+  }
+
+  .div-amenities {
+    grid-template-columns: 1fr;
+  }
+
+  /* Configure management table responsiveness */
+
+  .content-available,
+  .head-available,
+  .head-description,
+  .content-description,
+  .content-neighborhood,
+  .head-neighborhood,
+  .head-seating,
+  .content-seating,
+  .content-type,
+  .head-type {
+    display: none;
+  }
+
+  .up-header {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .action-add {
+    padding-left: 0px;
+  }
+
+  .div-content {
+    width: 70%;
+  }
+
+  .login-content {
+    width: 80%;
+  }
+}
+
+/* Code used to remove arrows from numeric fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

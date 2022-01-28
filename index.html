@@ -1,0 +1,112 @@
+<!-- 
+Name: Course Project - Coworking Registry
+Program: Software Development Diploma
+Course Code: SODV1201 - Introduction to Web Programming
+Authors: Arianne Hoffschneider Guedes Gayer and Jorge Eduardo Schmitt Gayer
+Student IDs: 425002 and 424267
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Welcome to 4Work</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="./js/ws.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/ws_management.css"/>
+  </head>
+  <body>
+    <div class="left-nav">
+      <a href="#">4Work</a>
+      <div class="right-nav">
+        <a onclick="showLogin();" title="Click here to login as Workspace Admin">Login</a>
+      </div>
+    </div>
+    <section id="showcase">
+      <div class="container">
+        <h1>Come work with us</h1>
+      </div>
+    </section>
+    <div class="filter">
+      <div class="proximity-filter">
+        <h3><strong>Filter Options</strong><br /></h3>
+        <!-- <input type="number" id="" onclick="loadWorkspaces(1)();" /> Km<br/> -->
+      </div>
+      <div class="price-filter">
+        <strong>Price</strong><br/>
+        <input type="checkbox" id="chkPrice0" onclick="loadWorkspaces(1)"/> Under $500<br/>
+        <input type="checkbox" id="chkPrice1" onclick="loadWorkspaces(1)"/> $500 - $1000<br/>
+        <input type="checkbox" id="chkPrice2" onclick="loadWorkspaces(1)"/> $1000 - $1500<br/>
+        <input type="checkbox" id="chkPrice3" onclick="loadWorkspaces(1)"/> $1500 - $2000<br/><br/>
+      </div>
+      <div class="availability-filter">
+        <strong>Availability</strong><br/>
+        <input type="checkbox" id="chkForRent" onclick="loadWorkspaces(1)"/> For rent<br/>
+        <input type="checkbox" id="chkRented" onclick="loadWorkspaces(1)"/> Rented<br/>
+      </div>
+      <div class="amenities-filter">
+        <strong>Amenities</strong><br/>
+        <input type="checkbox" id="chkAmenitie0" onclick="loadWorkspaces(1)"/> Wi-fi<br/>
+        <input type="checkbox" id="chkAmenitie1" onclick="loadWorkspaces(1)"/> Printer<br/>
+        <input type="checkbox" id="chkAmenitie2" onclick="loadWorkspaces(1)"/> Fax Machine<br/>
+        <input type="checkbox" id="chkAmenitie3" onclick="loadWorkspaces(1)"/> Shower<br/>
+        <input type="checkbox" id="chkAmenitie4" onclick="loadWorkspaces(1)"/> Locker<br/>
+        <input type="checkbox" id="chkAmenitie5" onclick="loadWorkspaces(1)"/> Parking<br/>
+        <input type="checkbox" id="chkAmenitie6" onclick="loadWorkspaces(1)"/> Bike Lockers<br/>
+        <input type="checkbox" id="chkAmenitie7" onclick="loadWorkspaces(1)"/> Smart TV<br/>
+        <input type="checkbox" id="chkAmenitie8" onclick="loadWorkspaces(1)"/> Projector<br/>
+        <input type="checkbox" id="chkAmenitie9" onclick="loadWorkspaces(1)"/> Kitchen<br/>
+        <input type="checkbox" id="chkAmenitie10" onclick="loadWorkspaces(1)"/> Whiteboard<br/>
+        <input type="checkbox" id="chkAmenitie11" onclick="loadWorkspaces(1)"/> Vending Machine<br/><br/>
+      </div>
+      <div class="type-filter">
+        <strong>Type</strong><br/>
+        <input type="checkbox" id="chkType0" onclick="loadWorkspaces(1)"/> Desk in Shared Room<br/>
+        <input type="checkbox" id="chkType1" onclick="loadWorkspaces(1)"/> Desk in Private Room<br/>
+        <input type="checkbox" id="chkType2" onclick="loadWorkspaces(1)"/> Meeting Room<br/>
+        <input type="checkbox" id="chkType3" onclick="loadWorkspaces(1)"/> Theater<br/>
+        <input type="checkbox" id="chkType4" onclick="loadWorkspaces(1)"/> Conference Room<br/>
+      </div>
+    </div>
+    <div class="login" id="login">
+      <div class="login-content">
+        <h4 id="wrong-cred">Wrong credentials!</h4>
+        <div class="login-content1" id="login-content1">
+          <label class="label-login" for="user-login">Username:</label>
+          <input class="user-login" id="user-login" type="text" value="admin" disabled/><br/>
+          <label class="label-login" for="user-password">Password:</label>
+          <input class="user-password" id="user-password" type="password" value=""/><br/>
+          <br/><br/>
+          <a class="login-link" onclick="systemLogin()"><label class="label-button btn">Login</label></a>
+          <label class="label-button btn" onclick="cancelLogin();">Cancel</label>
+        </div>
+      </div>
+    </div>
+    <div class="empty-state" id="empty-state">
+      <h1>There is no woskpace with this criteria</h1>
+    </div>
+    <div id="main-container"></div>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANoyAa0HaG7TLdxarQU-VunOdv9rJGos8&callback=InitMapHome">
+    </script>
+    <div class="dropdown fix-sort">
+      <button class="drop-button" id="drop-button">Sort by</button>
+      <div class="dropdown-options">
+        <!-- <a href="#" onclick="sorting(5);">Proximity</a> -->
+        <a href="#" onclick="sorting(1)">Price</a>
+        <a href="#" onclick="sorting(2)">Availability</a>
+        <a href="#" onclick="sorting(3)">More Amenities</a>
+        <a href="#" onclick="sorting(4)">Type</a>
+      </div>
+    </div>
+    <div id="footer">
+      <p>Copyright &copy; <span id="current-year"></span> 4Work</p>
+    </div>
+  </body>
+</html>

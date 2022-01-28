@@ -1,0 +1,164 @@
+<!-- 
+Name: Course Project - Coworking Registry
+Program: Software Development Diploma
+Course Code: SODV1201 - Introduction to Web Programming
+Authors: Arianne Hoffschneider Guedes Gayer and Jorge Eduardo Schmitt Gayer
+Student IDs: 425002 and 424267
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/ws_management.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/ws.js"></script>
+    <title>Workspace Management</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Sans+Pro:wght@300&display=swap");
+    </style>
+  </head>
+  <body></body>
+  <!-- Create page header -->
+    <div class="main-body">
+      <div class="up-header">
+        <h1 class="page-title">WS Management</h1>
+        <div class="main-header">
+          <ul class="menu">
+            <!-- <li id="logout"><u>Logout</u></li> -->
+            <li id="user">Admin</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="up-separator"/>
+      <div class="management">
+        <div class="content">
+          <div class="content-to-hide">
+            <div class="mgmt-header">
+              <h3 id="action-title">Add Workspaces</h3>
+              <a href="./ws_management.html">
+                <img
+                  class="action-add action-icons"
+                  src="./images/Back.png"
+                  alt="Back to WS management home"/>
+              </a>
+            </div>
+            <hr class="up-separator"/>
+            <div class="div-form">
+              <form action="">
+                <div class="div-content">
+                  <div class="err-msg" id="err-msg">
+                    <h3>* Please inform the workspace name</h3>
+                  </div>
+                  <div class="inside-content">
+                    <div class="one-line">
+                      <div class="col1">
+                        <label class="labels" for="txtName">Name: </label><br/>
+                        <input type="text" name="txtName" id="txtName" maxlength="50"/>
+                      </div>
+                      <div class="col2">
+                        <label class="labels lblAvailable" for="chkAvailable">Available</label>
+                        <input type="checkbox" id="chkAvailable" checked/><br/>
+                      </div>
+                    </div>
+                    <br/>
+                    <div class="one-block">
+                      <label class="labels" for="txtDescription">Description: </label>
+                      <textarea
+                        id="txtDescription"
+                        name="txtDescription"
+                        rows="3"
+                        cols="50"
+                        maxlength="200">
+                      </textarea>
+                    </div>
+                    <br/>
+                    <div class="one-line">
+                      <div class="col1">
+                        <label class="labels" for="txtType">Type: </label>
+                        <select name="optType" id="optType">
+                          <script>
+                            loadTypeOptions();
+                          </script>
+                        </select>
+                      </div>
+                      <div class="col2">
+                        <label class="labels" for="txtNeighborhood">Neighborhood: </label>
+                        <input type="text" name="txtNeighborhood" id="txtNeighborhood"/>
+                      </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="one-line">
+                      <div class="col1">
+                        <label class="labels" for="txtPrice">Price: </label>
+                        <input type="number" name="txtPrice" id="txtPrice"/>
+                      </div>
+                      <div class="col2">
+                        <label class="labels" for="txtSeating">Seats: </label>
+                        <input type="number" name="txtSeating" id="txtSeating"/>
+                      </div>
+                    </div>
+                    <br/>
+                    <label class="labels" for="div-location"></label>
+                    <h3 class="location-title">Location</h3>
+                    <div class="border-div div-location">
+                      <div class="one-line">
+                        <div class="col1">
+                          <label class="labels" for="txtLatitude">Latitude: </label>
+                          <input
+                            type="number"
+                            name="txtLatitude"
+                            id="txtLatitude"
+                            onchange="InitMap();"/>
+                        </div>
+                        <div class="col2">
+                          <label class="labels" for="txtLongitude">Longitude: </label>
+                          <input
+                            type="number"
+                            name="txtLongitude"
+                            id="txtLongitude"
+                            onchange="InitMap()"/>
+                        </div>
+                      </div>
+                      <br/>
+                      <input
+                        class="update-map"
+                        type="button"
+                        value="Update map"
+                        onclick="InitMap();"/>
+                      <div id="map" class="themap">
+                        <script></script>
+                      </div>
+                    </div>
+                    <br/>
+                    <div-main-amenities>
+                      <h3>Amenities</h3>
+                      <div class="border-div div-amenities" id="div-amenities">
+                        <script>
+                          // Function to load all the amenities options from the table amenities on the database
+                          showAmenitieOptions();
+                        </script>
+                      </div>
+                    </div-main-amenities>
+                  </div>
+                  <div class="div-btn">
+                    <input
+                      class="btn"
+                      id="doAction"
+                      type="button"
+                      value="Add New Workspace"
+                      onclick="actionWS();"/>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYIJ5t6HRM0y-5XWQxW3okmyTgr46Yev4&callback=InitMap"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "4work",
+  "version": "1.0.0",
+  "description": "Final web project repository\r College third term final project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgegayer/4Work.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorgegayer/4Work/issues"
+  },
+  "homepage": "https://github.com/jorgegayer/4Work#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "exprss": "0.0.1-security",
+    "querystring": "^0.2.1",
+    "sqlite3": "^5.0.2"
+  }
+}

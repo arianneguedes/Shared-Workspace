@@ -1,0 +1,102 @@
+<!-- 
+Name: Course Project - Coworking Registry
+Program: Software Development Diploma
+Course Code: SODV1201 - Introduction to Web Programming
+Authors: Arianne Hoffschneider Guedes Gayer and Jorge Eduardo Schmitt Gayer
+Student IDs: 425002 and 424267
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/ws_management.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/ws_management.js"></script>
+    <script src="./js/ws.js"></script>
+    <title>Workspace Management</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Sans+Pro:wght@300&display=swap");
+    </style>
+  </head>
+  <body>
+    <div class="main-body">
+      <div class="up-header">
+        <h1 class="page-title">WS Management</h1>
+        <div class="main-header">
+          <ul class="menu">
+            <a href="./index.html">
+              <li title="Click here to logout" id="logout"><u>Logout</u></li></a>
+            <li id="user">Admin</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="up-separator"/>
+      <div class="management">
+        <!-- The delete class is hidden and it is only shown if the owner clicks on the delete button -->
+        <div class="div-delete" id="div-delete">
+          <div class="content-delete">
+            <h2 id="text-delete">
+              You are about to delete this record. Do you confirm this operation?
+            </h2>
+            <label id="idToDelete"></label>
+            <label
+              class="btn"
+              title="Delete this Workspace"
+              onclick="deleteField();"
+              >Confirm</label>
+            <label class="btn" onclick="hideDelete()">Cancel</label>
+          </div>
+          <div class="background"></div>
+        </div>
+        <!-- End of delete class -->
+        <div class="content">
+          <div class="content-to-hide">
+            <div class="mgmt-header">
+              <h3>Workspaces</h3>
+              <a href="./ActionWS.html?action=add" title="Add a new workspace">
+                <img
+                  class="action-add action-icons"
+                  src="./images/add.png"
+                  alt="Add new Workspace"/>
+              </a>
+            </div>
+            <hr class="up-separator"/>
+            <div class="div-table">
+              <table class="main-table" id="main-table">
+                <tr class="table-row">
+                  <td class="content-available r-content">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id="chkAvailable"
+                      disabled
+                      checked/>
+                  </td>
+                  <td class="content-type r-content">Shared Public Desk</td>
+                  <td class="content-name r-content">Bow Valley Workspaces</td>
+                  <td class="content-description r-content">
+                    This room is great for lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Harum possimus eum magnam perspiciatis nesciunt expedita accusamus nobis, aspernatur at quisquam. 
+                    Pariatur ipsum culpa eaque magnam laudantium sapiente voluptas nihil quidem.
+                  </td>
+                  <td class="content-neighborhood r-content">Neighborhood</td>
+                  <td class="content-price r-content">$800.00</td>
+                  <td class="content-seatings r-content">2</td>
+                  <td class="content-actions r-content">
+                    <a href="./ActionWS.html?id=1234156789sdfsdfdsfsdfsdf&action=update">
+                      <img class="action-icons" src="./images/edit.png" alt=""/>
+                    </a>
+                    <img class="action-icons" src="./images/delete.png" alt=""/>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

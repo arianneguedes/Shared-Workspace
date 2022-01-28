@@ -1,0 +1,337 @@
+/* 
+Name: Course Project - Coworking Registry
+Program: Software Development Diploma
+Course Code: SODV1201 - Introduction to Web Programming
+Authors: Arianne Hoffschneider Guedes Gayer and Jorge Eduardo Schmitt Gayer
+Student IDs: 425002 and 424267
+*/
+
+body {
+  background-color: #f4f4f4;
+  color: #555555;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+.left-nav {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.left-nav a {
+  float: left;
+  color: #f5db61;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.right-nav {
+  float: right;
+}
+
+.right-nav a {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.right-nav a:hover {
+  cursor: pointer;
+}
+
+#showcase {
+  background-image: url("../images/coworking_image.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  min-height: 300px;
+  text-align: center;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+#showcase h1 {
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 1.6em;
+  padding-top: 10px;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.filter {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-template-rows: 70px 140px 90px 350px 110px; */
+  grid-template-rows: 70px 140px 90px 350px 110px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  float: left;
+  margin-left: 20px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.proximity-filter {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.price-filter {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.availability-filter {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.amenities-filter {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.type-filter {
+  grid-area: 5 / 1 / 6 / 2;
+}
+
+.inner-container {
+  width: 60%;
+  margin-left: 20%;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 5px #888888;
+  margin-top: 30px;
+}
+
+.no-results {
+  display: none;
+  height: 170px;
+}
+
+.no-results p {
+  text-align: center;
+  font-size: 30px;
+}
+
+.room {
+  width: 90%;
+  margin: auto;
+}
+
+.main-room {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.room-info1 {
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+  /*height: fit-content;*/
+}
+
+.room-info1 h2 {
+  margin-bottom: 0px;
+}
+
+.room-info1 p {
+  margin-bottom: 0px;
+}
+
+.room-info2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+}
+
+.room-info2 p {
+  margin-bottom: 0px;
+  text-align: center;
+  background-color: #f5db61;
+}
+
+.room-info2 h2 {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.room-description {
+  border-top: dashed 2px #f5db61;
+  width: 90%;
+  margin: auto;
+}
+
+.room-map {
+  display: grid;
+  margin: auto;
+  width: 90%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.main-amenities {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: auto;
+  width: 90%;
+  padding-bottom: 20px;
+}
+
+li {
+  list-style-image: url("../images/check.png");
+}
+
+.button {
+  background-color: #f5db61;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: none;
+  width: 80px;
+  height: 26px;
+  float: right;
+}
+
+.button:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.drop-button {
+  background-color: #f5db61;
+  color: #000000;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 150px;
+  box-shadow: 5px 5px 5px #888888;
+  z-index: 1;
+}
+
+.dropdown-options a {
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-options a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+.dropdown:hover .drop-button {
+  background-color: #000000;
+  color: #f1f1f1;
+}
+
+.fix-sort {
+  position: absolute;
+  top: 325px;
+  right: 120px;
+}
+
+#footer {
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+#wrong-cred {
+  color: red;
+  display: none;
+}
+
+.empty-state {
+  text-align: center;
+  height: 700px;
+  display: none;
+}
+
+.empty-state h1 {
+  text-align: center;
+  margin-top: 150px;
+}
+
+@media (max-width: 800px) {
+  /* Edit screen responsiveness */
+  #showcase {
+    margin-bottom: 30px;
+  }
+
+  #showcase h1 {
+    color: #ffffff;
+    font-size: xx-large;
+    line-height: 1.6em;
+    padding-top: 10px;
+  }
+
+  .filter {
+    display: none;
+  }
+
+  .inner-container {
+    margin-top: 30px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  .main-room {
+    grid-template-columns: 1fr;
+  }
+
+  .room-info1,
+  .room-info2,
+  .room-description {
+    grid-area: auto;
+  }
+
+  .room-info2 {
+    margin: auto;
+    width: 90%;
+    padding: 0px;
+    margin-bottom: 20px;
+  }
+
+  .room-description {
+    width: 100%;
+  }
+
+  .room-description p {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .fix-sort {
+    position: absolute;
+    top: 325px;
+    left: 20px;
+  }
+}
